@@ -9,21 +9,34 @@ export default function Home() {
   const [inputYear, setInputYear] = useState('');
   const [inputMonth, setInputMonth] = useState('');
   const [inputDay, setInputDay] = useState('');
-  
+
   const [displayYear, setDisplayYear] = useState('');
   const [displayMonth, setDisplayMonth] = useState('');
   const [displayDay, setDisplayDay] = useState('');
 
-  const onSubmit = (e: React.FormEvent) => {
+
+  const calculateAge = (birthDate: string) => {
+    const currentDate = Date.now();
+
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log(e);
+    const birthDate = new Date(`${inputYear}, ${inputMonth}, ${inputDay}`);
+
+    const testDate = new Date(birthDate);
+    //@ts-ignore
+    if (testDate instanceof Date && !isNaN(testDate)) {
+      
+    } else return;
+
   };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <div className='rounded-lg bg-white p-8'>
-        <form action='submit' onSubmit={onSubmit} className=''>
+        <form action='submit' onSubmit={handleSubmit} className=''>
 
           {/* INPUTS */}
           <div className='flex gap-2'>
@@ -32,6 +45,7 @@ export default function Home() {
               <input
                 id='year'
                 type='text'
+                required
                 value={inputYear}
                 onChange={(e) => setInputYear(e.target.value)}
                 className='border'
@@ -42,6 +56,7 @@ export default function Home() {
               <input
                 id='month'
                 type='text'
+                required
                 value={inputMonth}
                 onChange={(e) => setInputMonth(e.target.value)}
                 className='border'
@@ -52,6 +67,7 @@ export default function Home() {
               <input
                 id='day'
                 type='text'
+                required
                 value={inputDay}
                 onChange={(e) => setInputDay(e.target.value)}
                 className='border'

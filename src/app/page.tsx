@@ -6,12 +6,13 @@ export default function Home() {
 
   //const [dob, setDob] = useState('');
 
-  const [year, setYear] = useState('');
-  const [month, setMonth] = useState('');
-  const [day, setDay] = useState('');
-
-  console.log(year);
-
+  const [inputYear, setInputYear] = useState('');
+  const [inputMonth, setInputMonth] = useState('');
+  const [inputDay, setInputDay] = useState('');
+  
+  const [displayYear, setDisplayYear] = useState('');
+  const [displayMonth, setDisplayMonth] = useState('');
+  const [displayDay, setDisplayDay] = useState('');
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,8 +32,8 @@ export default function Home() {
               <input
                 id='year'
                 type='text'
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
+                value={inputYear}
+                onChange={(e) => setInputYear(e.target.value)}
                 className='border'
               />
             </div>
@@ -41,8 +42,8 @@ export default function Home() {
               <input
                 id='month'
                 type='text'
-                value={month}
-                onChange={(e) => setMonth(e.target.value)}
+                value={inputMonth}
+                onChange={(e) => setInputMonth(e.target.value)}
                 className='border'
               />
             </div>
@@ -51,8 +52,8 @@ export default function Home() {
               <input
                 id='day'
                 type='text'
-                value={day}
-                onChange={(e) => setDay(e.target.value)}
+                value={inputDay}
+                onChange={(e) => setInputDay(e.target.value)}
                 className='border'
               />
             </div>
@@ -66,15 +67,15 @@ export default function Home() {
 
         {/* OUTPUTS */}
         <div className='flex gap-2'>
-          <p className=''>{!year ? '--' : year}</p>
+          <p className=''>{!displayYear ? '--' : displayYear}</p>
           <p className=''>YEARS</p>
         </div>
         <div className='flex gap-2'>
-          <p className=''>{!month ? '--' : month}</p>
+          <p className=''>{!displayMonth ? '--' : displayMonth}</p>
           <p className=''>MONTHS</p>
         </div>
         <div className='flex gap-2'>
-          <p className=''>{!day ? '--' : day}</p>
+          <p className=''>{!displayDay ? '--' : displayDay}</p>
           <p className=''>DAYS</p>
         </div>
 

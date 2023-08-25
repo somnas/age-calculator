@@ -31,6 +31,7 @@ export default function Home() {
               <input
                 id='year'
                 type='text'
+                value={year}
                 onChange={(e) => setYear(e.target.value)}
                 className='border'
               />
@@ -40,6 +41,7 @@ export default function Home() {
               <input
                 id='month'
                 type='text'
+                value={month}
                 onChange={(e) => setMonth(e.target.value)}
                 className='border'
               />
@@ -49,6 +51,7 @@ export default function Home() {
               <input
                 id='day'
                 type='text'
+                value={day}
                 onChange={(e) => setDay(e.target.value)}
                 className='border'
               />
